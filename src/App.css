@@ -1,0 +1,51 @@
+.AppStyle {
+    display: grid;
+    position: absolute;
+    grid-template-columns: 220px 1fr 1fr;
+    grid-gap: 10px;
+}
+.style {
+    background-color: navajowhite;
+    border: royalblue 3px solid;
+    border-radius: 20px;
+    padding: 30px;
+    font-family: Batang;
+}
+
+.error {
+    border: red 1px solid;
+}
+
+.error-message {
+    color: red;
+    font-size: large;
+}
+
+.filter-on {
+    background-color: forestgreen;
+    border-radius: 25px;
+}
+.filter-off {
+    background-color: white;
+    border-radius: 25px;
+}
+
+.isDone {
+    opacity: 0.7;
+  list-style-type: none;
+}
+.isntDone {
+  list-style-type: none;
+}
+
+.titleStyle {
+  text-align: center;
+  font-size: x-large;
+  color: midnightblue;
+}
+
+.button-filter {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 3px;
+}
