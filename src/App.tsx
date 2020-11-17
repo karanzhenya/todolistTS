@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Todolist} from "./Todolist";
+import {TaskType, Todolist} from "./Todolist";
 import {v1} from 'uuid';
 import {AddItemForm} from "./AddItemForm";
 
@@ -10,12 +10,14 @@ type TodolistType = {
     title: string,
     filter: FilterValuesType
 }
+type TaskStateType = {
+    [key: string]: Array<TaskType>
+}
 
 function App() {
-    let [style, setStyle] = useState("style");
     let todolistId1 = v1();
     let todolistId2 = v1();
-    let [tasksObj, setTasks] = useState({
+    let [tasksObj, setTasks] = useState<TaskStateType>({
         [todolistId1]: [
             {id: v1(), title: "HTML", isDone: true},
             {id: v1(), title: "CSS", isDone: true},
@@ -72,9 +74,21 @@ function App() {
         {id: todolistId2, title: "What to buy", filter: "all"},
     ]);
 
+    function addTodolist (title: string) {
+        let todolist: TodolistType = {
+            id: v1(),
+            filter: "all",
+            title: title
+        };
+        setTodolist([todolist, ...todolists])
+        setTasks({...tasksObj,
+            [todolist.id]: []
+        })
+    }
+
     return (
         <div className={"AppStyle"}>
-            <AddItemForm addTask={()=>{}} id={"asd"}/>
+            <AddItemForm addItem={addTodolist}/>
             {todolists.map((tl) => {
                 let taskFortodolist = tasksObj[tl.id];
                 if (tl.filter === "completed") {
@@ -83,7 +97,7 @@ function App() {
                 if (tl.filter === "active") {
                     taskFortodolist = taskFortodolist.filter(t => t.isDone === false)
                 }
-                return <div className={style}>
+                return <div className={"style"}>
                     <Todolist
                         key={tl.id}
                         id={tl.id}

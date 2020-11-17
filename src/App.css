@@ -1,14 +1,12 @@
 .AppStyle {
-    display: grid;
-    position: absolute;
-    grid-template-columns: 220px 1fr 1fr;
-    grid-gap: 10px;
+    display: flex;
 }
 .style {
     background-color: navajowhite;
     border: royalblue 3px solid;
     border-radius: 20px;
     padding: 30px;
+    margin-left: 20px;
     font-family: Batang;
 }
 

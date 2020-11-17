@@ -36,10 +36,13 @@ export function Todolist(props: PropsType) {
     const removeTodolist = () => {
         props.removeTodolist(props.id)
     };
+    const addTask = (title: string) => {
+        props.addTask(title, props.id)
+    }
     return (
         <div>
             <h3 className={"titleStyle"}>{props.title}<button onClick={removeTodolist}>X</button></h3>
-            <AddItemForm id={props.id} addTask={props.addTask}/>
+            <AddItemForm addItem={addTask}/>
             <ul>
                 {props.task.map(t => {
                     const onRemoveHandler = () => {props.removeTask(t.id, props.id)};

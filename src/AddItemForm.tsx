@@ -1,8 +1,7 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from "react";
 
 type AddItemFormType = {
-    addTask: (newTaskTitle: string, todolistId: string) => void
-    id: string
+    addItem: (newTaskTitle: string) => void
 }
 
 export function AddItemForm(props: AddItemFormType) {
@@ -20,7 +19,7 @@ export function AddItemForm(props: AddItemFormType) {
     };
     const addTask = () => {
         if (newTaskTitle.trim() !== "") {
-            props.addTask(newTaskTitle.trim(), props.id);
+            props.addItem(newTaskTitle.trim());
             setNewTaskTitle("")
         } else {
             setError("Nelzya tak pisat'")
