@@ -7,12 +7,12 @@ import {AppBar, Button, Container, Grid, IconButton, Toolbar, Typography} from "
 import {Menu} from '@material-ui/icons';
 
 export type FilterValuesType = "all" | "active" | "completed";
-type TodolistType = {
+export type TodolistType = {
     id: string,
     title: string,
     filter: FilterValuesType
 }
-type TaskStateType = {
+export type TaskStateType = {
     [key: string]: Array<TaskType>
 }
 
@@ -119,11 +119,11 @@ function App() {
                 </Toolbar>
             </AppBar>
             <Container fixed>
-                <Grid container style={{padding:"10px"}}>
+                <Grid container style={{padding: "10px"}}>
                     <AddItemForm addItem={addTodolist}/>
                 </Grid>
-                   <Grid container spacing={3}>
-                       {todolists.map((tl) => {
+                <Grid container spacing={3}>
+                    {todolists.map((tl) => {
                         let taskFortodolist = tasksObj[tl.id];
                         if (tl.filter === "completed") {
                             taskFortodolist = taskFortodolist.filter(t => t.isDone === true)
@@ -147,7 +147,7 @@ function App() {
                                 removeTodolist={removeTodolist}/>
                         </Grid>
                     })}
-                   </Grid>
+                </Grid>
             </Container>
         </div>)
 }
