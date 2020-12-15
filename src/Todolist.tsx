@@ -73,14 +73,14 @@ export function Todolist(props: PropsType) {
                     </li>
                 })}
             </ul>
-            <div style={{padding: "5px"}}>
-                <Button variant={props.filter === "all" ? "contained" : "text"}
+            <div style={{padding: "10px"}}>
+                <Button style={{color: "white", backgroundColor: "lightskyblue"}} variant={props.filter === "all" ? "contained" : "text"}
                         onClick={onAllChangeFilter}>All
                 </Button>
-                <Button variant={props.filter === "active" ? "contained" : "text"}
+                <Button style={{color: "white", backgroundColor: "lightskyblue"}} variant={props.filter === "active" ? "contained" : "text"}
                         onClick={onActiveChangeFilter}>Active
                 </Button>
-                <Button variant={props.filter === "completed" ? "contained" : "text"}
+                <Button style={{color: "white", backgroundColor: "lightskyblue"}} variant={props.filter === "completed" ? "contained" : "text"}
                         onClick={onCompletedChangeFilter}>Completed
                 </Button>
             </div>

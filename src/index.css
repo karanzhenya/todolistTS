@@ -1,6 +1,9 @@
 body {
-  background-image: url("https://lh6.googleusercontent.com/-PFcEmXbtEW4/VNExj57c1VI/AAAAAAAAGBI/rewT4q60Z70/w740-h555-no/DSC07225.JPG");
+  background: url(gifka.gif), url(img2.jpg) no-repeat;
   background-size: 100%;
+  position: relative;
+
+  background-blend-mode: soft-light;
 
 
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -8,6 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: white;
 }
 
 code {
