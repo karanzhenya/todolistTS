@@ -1,5 +1,9 @@
 .todolist {
-    border: 1px solid whitesmoke;
+    border: 2px solid whitesmoke;
     border-radius: 5px;
     padding: 5px;
+}
+.App {
+    border: 1px solid black;
+    width: 100%;
 }

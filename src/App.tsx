@@ -108,7 +108,7 @@ function App() {
     }
     return (
         <div className="App">
-            <AppBar position="static">
+            {/*<AppBar position="static">
                 <Toolbar>
                     <IconButton edge="start" color="inherit" aria-label="menu">
                         <Menu/>
@@ -118,12 +118,12 @@ function App() {
                     </Typography>
                     <Button color="inherit">Login</Button>
                 </Toolbar>
-            </AppBar>
+            </AppBar>*/}
             <Container fixed>
-                <Grid container style={{padding: "20px"}}>
+                <Grid container style={{padding: "20px", justifyContent: "center"}} >
                     <AddItemForm addItem={addTodolist}/>
                 </Grid>
-                <Grid container spacing={5}>
+                <Grid container spacing={5} style={{justifyContent: "center"}}>
                     {
                         todolists.map((tl) => {
                             let tasksForTodolist = tasksObj[tl.id];

@@ -78,7 +78,7 @@ export function Todolist(props: PropsType) {
                 </div>
             })}
         </div>
-        <div>
+        <div style={{paddingTop: "5px"}}>
             <Button size={"small"} variant={props.filter === "all" ? "contained" : "text"} onClick={onAllClickHandler}>All
             </Button>
             <Button size={"small"} variant={props.filter === "active" ? "contained" : "text"} onClick={onActiveClickHandler}>Active
