@@ -17,7 +17,7 @@ import {
 } from "./state/todolists-reducer";
 import {addTaskAC, changeTaskStatusAC, changeTaskTitleAC, removeTaskAC, tasksReducer} from "./state/tasks-reducer";
 
-export type TodolistType = {
+/*export type TodolistType = {
     id: string,
     title: string,
     filter: FilterType
@@ -89,18 +89,18 @@ function AppWithReducers() {
         const action = addTodolistAC(title)
         dispatchToTodolistsReducer(action)
         dispatchToTasksReducer(action)
-        /*let todolist: TodolistType = {
+        /!*let todolist: TodolistType = {
             id: v1(),
             title: title,
             filter: "all"
         };
         setTodolists([todolist, ...todolists])
-        setTasks({...tasksObj, [todolist.id]: []})*/
+        setTasks({...tasksObj, [todolist.id]: []})*!/
     }
 
     return (
         <div className="App">
-            {/*<AppBar position="static">
+            {/!*<AppBar position="static">
                 <Toolbar>
                     <IconButton edge="start" color="inherit" aria-label="menu">
                         <Menu/>
@@ -110,7 +110,7 @@ function AppWithReducers() {
                     </Typography>
                     <Button color="inherit">Login</Button>
                 </Toolbar>
-            </AppBar>*/}
+            </AppBar>*!/}
             <Container fixed>
                 <Grid container style={{padding: "20px", justifyContent: "center"}}>
                     <AddItemForm addItem={addTodolist}/>
@@ -148,6 +148,4 @@ function AppWithReducers() {
             </Container>
         </div>
     );
-}
-
-export default AppWithReducers;
+}*/

@@ -22,7 +22,9 @@ export function AddItemForm(props: AddItemFormPropsType) {
         setTitle(e.currentTarget.value)
     }
     const onKeyHandler = (e: KeyboardEvent<HTMLInputElement>) => {
-        setError(null)
+        if (setError !== null) {
+            setError(null)
+        }
         if (e.charCode === 13) {
             addItem()
         }

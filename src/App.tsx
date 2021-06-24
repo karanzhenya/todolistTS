@@ -9,7 +9,7 @@ import {Menu} from "@material-ui/icons";
 import Typography from '@material-ui/core/Typography';
 import {Button, Container, Grid, Paper, Toolbar} from "@material-ui/core";
 
-export type TodolistType = {
+/*export type TodolistType = {
     id: string,
     title: string,
     filter: FilterType
@@ -108,7 +108,7 @@ function App() {
     }
     return (
         <div className="App">
-            {/*<AppBar position="static">
+            {/!*<AppBar position="static">
                 <Toolbar>
                     <IconButton edge="start" color="inherit" aria-label="menu">
                         <Menu/>
@@ -118,7 +118,7 @@ function App() {
                     </Typography>
                     <Button color="inherit">Login</Button>
                 </Toolbar>
-            </AppBar>*/}
+            </AppBar>*!/}
             <Container fixed>
                 <Grid container style={{padding: "20px", justifyContent: "center"}} >
                     <AddItemForm addItem={addTodolist}/>
@@ -156,6 +156,4 @@ function App() {
             </Container>
         </div>
     );
-}
-
-export default App;
+}*/
