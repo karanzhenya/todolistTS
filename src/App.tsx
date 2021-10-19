@@ -108,7 +108,11 @@ function App() {
     }
     return (
         <div className="App">
+<<<<<<< HEAD
             {/!*<AppBar position="static">
+=======
+            <AppBar position="static">
+>>>>>>> parent of cc04361 (reducers)
                 <Toolbar>
                     <IconButton edge="start" color="inherit" aria-label="menu">
                         <Menu/>
@@ -118,12 +122,16 @@ function App() {
                     </Typography>
                     <Button color="inherit">Login</Button>
                 </Toolbar>
+<<<<<<< HEAD
             </AppBar>*!/}
+=======
+            </AppBar>
+>>>>>>> parent of cc04361 (reducers)
             <Container fixed>
-                <Grid container style={{padding: "20px", justifyContent: "center"}} >
+                <Grid container style={{padding: "20px"}}>
                     <AddItemForm addItem={addTodolist}/>
                 </Grid>
-                <Grid container spacing={5} style={{justifyContent: "center"}}>
+                <Grid container spacing={5}>
                     {
                         todolists.map((tl) => {
                             let tasksForTodolist = tasksObj[tl.id];
