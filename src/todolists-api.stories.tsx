@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, {useEffect, useState} from 'react'
-import {todolistsApi} from "./api/todolists-api";
+import {todolistsApi, UpdateTaskPayloadType} from "./api/todolists-api";
 
 export default {
     title: 'API'
@@ -49,6 +49,61 @@ export const UpdateTodolistTitle = () => {
     useEffect(() => {
         const todolistId = 'ff8b99f3-e7de-4ef1-adb4-73ca93473472'
         todolistsApi.updateTodolist(todolistId, "New refactoring title").then(response => {
+            setState(response.data)
+        })
+    }, [])
+
+    return <div> {JSON.stringify(state)}</div>
+}
+
+export const GetTasks = () => {
+    const [state, setState] = useState<any>(null)
+    useEffect(() => {
+        const todolistId = 'ff8b99f3-e7de-4ef1-adb4-73ca93473472'
+        todolistsApi.getTasks(todolistId).then(response => {
+            setState(response.data)
+        })
+    }, [])
+
+    return <div> {JSON.stringify(state)}</div>
+}
+export const CreateTask = () => {
+    const [state, setState] = useState<any>(null)
+    useEffect(() => {
+        const todolistId = 'ff8b99f3-e7de-4ef1-adb4-73ca93473472'
+        todolistsApi.createTask(todolistId, "First Task").then(response => {
+            setState(response.data)
+        })
+    }, [])
+
+    return <div> {JSON.stringify(state)}</div>
+}
+export const DeleteTask = () => {
+    const [state, setState] = useState<any>(null)
+    useEffect(() => {
+        const todolistId = 'ff8b99f3-e7de-4ef1-adb4-73ca93473472'
+        const taskId = '00e5f445-4878-4e5d-ab22-cc1ea7067a23'
+        todolistsApi.deleteTask(todolistId, taskId).then(response => {
+            setState(response.data)
+        })
+    }, [])
+
+    return <div> {JSON.stringify(state)}</div>
+}
+export const UpdateTask = () => {
+    const [state, setState] = useState<any>(null)
+    useEffect(() => {
+        const todolistId = 'ff8b99f3-e7de-4ef1-adb4-73ca93473472';
+        const taskId = '771cc2ea-aa02-464f-b7df-3635fdf6228d';
+        const payload: UpdateTaskPayloadType = {
+            title: 'Refactoring title',
+            description: 'something description',
+            deadline: '',
+            priority: 1,
+            startDate: Date(),
+            status: 1
+        }
+        todolistsApi.updateTask(todolistId, taskId, payload).then(response => {
             setState(response.data)
         })
     }, [])
