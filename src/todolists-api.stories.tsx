@@ -1,18 +1,6 @@
-import axios from 'axios'
 import React, {useEffect, useState} from 'react'
 import {todolistsApi, UpdateTaskPayloadType} from "./api/todolists-api";
 
-export default {
-    title: 'API'
-}
-
-
-const settings = {
-    withCredentials: true,
-    headers: {
-        "api-key": "35899fcf-477f-4127-b8a1-4bc92d297428"
-    }
-};
 
 export const GetTodolists = () => {
     const [state, setState] = useState<any>(null)

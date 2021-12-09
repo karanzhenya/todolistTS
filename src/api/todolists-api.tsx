@@ -12,16 +12,18 @@ const instance = axios.create({
     ...settings
 })
 
-type TodolistsType = {
+
+type TodoType = {
     id: string,
-    title: string,
     addedDate: string,
-    order: number
+    order: number,
+    title: string
 }
-type ResponseDataType<Data = {}> = {
-    resultCode: number
+type ResponseDataType<D = {}> = {
+    resultCode: number,
     messages: Array<string>,
-    data: Data
+    fieldsErrors: Array<string>,
+    data: D
 }
 
 export type TaskType = {
@@ -61,19 +63,16 @@ export type UpdateTaskPayloadType = {
 
 export const todolistsApi = {
     getTodolists() {
-        return instance.get<TodolistsType>('todo-lists')
+        return instance.get<Array<TodoType>>('todo-lists')
     },
-
     createTodolist(title: string) {
-        return instance.post<ResponseDataType<{ item: TodolistsType }>>('todo-lists', {title: title})
+        return instance.post<ResponseDataType<{ item: TodoType }>>('todo-lists', {title})
     },
-
     deleteTodolist(todolistId: string) {
         return instance.delete<ResponseDataType>(`todo-lists/${todolistId}`)
     },
-
     updateTodolist(todolistId: string, title: string) {
-        return instance.put<ResponseDataType>(`todo-lists/${todolistId}`, {title: title})
+        return instance.put<ResponseDataType>(`todo-lists/${todolistId}`, {title})
     },
 
     getTasks(todolistId: string) {
