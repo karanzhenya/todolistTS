@@ -1,7 +1,8 @@
-import {authAPI} from "../api/todolists-api";
 import {Dispatch} from "redux";
-import {handleServerNetworkError} from "../utils/error-utils";
+import {authAPI} from "../api/todolists-api";
 import {setIsLoggedInAC} from "../features/Login/auth-reducer";
+import {AxiosError} from "axios";
+import {handleServerNetworkError} from "../utils/error-utils";
 
 const initialState: InitialStateType = {
     status: 'idle',
@@ -24,9 +25,7 @@ export const appReducer = (state: InitialStateType = initialState, action: Actio
 
 export type RequestStatusType = 'idle' | 'loading' | 'succeeded' | 'failed'
 export type InitialStateType = {
-    // происходит ли сейчас взаимодействие с сервером
     status: RequestStatusType
-    // если ошибка какая-то глобальная произойдёт - мы запишем текст ошибки сюда
     error: string | null
     isInitialized: boolean
 }
@@ -43,7 +42,8 @@ export const initializeAppTC = () => (dispatch: Dispatch) => {
         } else {
         }
     })
-        .catch(() => {
+        .catch((error: AxiosError) => {
+            handleServerNetworkError(error, dispatch)
         })
         .finally(() => {
             dispatch(setInitializationAC(true))

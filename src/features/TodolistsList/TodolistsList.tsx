@@ -1,6 +1,10 @@
 import React, {useCallback, useEffect} from 'react'
+import {Navigate} from "react-router-dom";
 import {useDispatch, useSelector} from 'react-redux'
-import {AppRootStateType} from '../../app/store'
+import {addTaskTC, removeTaskTC, TasksStateType, updateTaskTC} from './tasks-reducer'
+import {Todolist} from './Todolist/Todolist'
+import {AddItemForm} from '../../components/AddItemForm/AddItemForm'
+import {TaskStatuses} from '../../api/todolists-api'
 import {
     addTodolistTC,
     changeTodolistFilterAC,
@@ -10,13 +14,9 @@ import {
     removeTodolistTC,
     TodolistDomainType
 } from './todolists-reducer'
-import {addTaskTC, removeTaskTC, TasksStateType, updateTaskTC} from './tasks-reducer'
-import {TaskStatuses} from '../../api/todolists-api'
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
-import {AddItemForm} from '../../components/AddItemForm/AddItemForm'
-import {Todolist} from './Todolist/Todolist'
-import {Navigate} from "react-router-dom";
+import {AppRootStateType} from '../../app/store'
 
 type PropsType = {
     demo?: boolean
@@ -76,7 +76,6 @@ export const TodolistsList: React.FC<PropsType> = ({demo = false}) => {
         const thunk = addTodolistTC(title)
         dispatch(thunk)
     }, [dispatch])
-
     if (!isLoggedIn) {
         return <Navigate to={'login'}/>
     }

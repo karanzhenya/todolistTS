@@ -1,4 +1,7 @@
-import React from 'react'
+import {useDispatch, useSelector} from "react-redux";
+import {useNavigate} from "react-router-dom";
+import {loginTC} from "./auth-reducer";
+import {useFormik} from 'formik';
 import Grid from '@mui/material/Grid';
 import Checkbox from '@mui/material/Checkbox';
 import FormControl from '@mui/material/FormControl';
@@ -7,11 +10,7 @@ import FormGroup from '@mui/material/FormGroup';
 import FormLabel from '@mui/material/FormLabel';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import {useFormik} from 'formik';
-import {useDispatch, useSelector} from "react-redux";
-import {loginTC} from "./auth-reducer";
 import {AppRootStateType} from "../../app/store";
-import {useNavigate} from "react-router-dom";
 import {LoginParamsType} from "../../api/todolists-api";
 
 export const Login = () => {
@@ -45,7 +44,9 @@ export const Login = () => {
             formik.resetForm();
         },
     })
-    if(isLoggedIn) {navigate('/')}
+    if (isLoggedIn) {
+        navigate('/')
+    }
     return <Grid container justifyContent={'center'}>
         <Grid item justifyContent={'center'}>
             <form onSubmit={formik.handleSubmit}>
@@ -62,12 +63,14 @@ export const Login = () => {
                     </FormLabel>
                     <FormGroup>
                         <TextField label="Email" margin="normal" {...formik.getFieldProps('email')}/>
-                        {formik.touched.email && formik.errors.email && <div style={{color: 'red'}}>{formik.errors.email}</div>}
+                        {formik.touched.email && formik.errors.email &&
+                            <div style={{color: 'red'}}>{formik.errors.email}</div>}
                         <TextField type="password" label="Password"
                                    margin="normal"
                                    {...formik.getFieldProps('password')}
                         />
-                        {formik.touched.password && formik.errors.password && <div style={{color: 'red'}}>{formik.errors.password}</div>}
+                        {formik.touched.password && formik.errors.password &&
+                            <div style={{color: 'red'}}>{formik.errors.password}</div>}
                         <FormControlLabel label={'Remember me'} control={<Checkbox
                             {...formik.getFieldProps('rememberMe')}/>}/>
                         <Button type={'submit'} variant={'contained'} color={'primary'}>
