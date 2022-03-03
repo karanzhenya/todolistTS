@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/karanzhenya.github.io/todolist/static/css/main.48934d97.chunk.css",
-    "main.js": "/karanzhenya.github.io/todolist/static/js/main.9e852b49.chunk.js",
-    "main.js.map": "/karanzhenya.github.io/todolist/static/js/main.9e852b49.chunk.js.map",
-    "runtime-main.js": "/karanzhenya.github.io/todolist/static/js/runtime-main.57c482cf.js",
-    "runtime-main.js.map": "/karanzhenya.github.io/todolist/static/js/runtime-main.57c482cf.js.map",
-    "static/js/2.f0d2b32b.chunk.js": "/karanzhenya.github.io/todolist/static/js/2.f0d2b32b.chunk.js",
-    "static/js/2.f0d2b32b.chunk.js.map": "/karanzhenya.github.io/todolist/static/js/2.f0d2b32b.chunk.js.map",
-    "static/js/3.0ec34ece.chunk.js": "/karanzhenya.github.io/todolist/static/js/3.0ec34ece.chunk.js",
-    "static/js/3.0ec34ece.chunk.js.map": "/karanzhenya.github.io/todolist/static/js/3.0ec34ece.chunk.js.map",
-    "index.html": "/karanzhenya.github.io/todolist/index.html",
-    "static/css/main.48934d97.chunk.css.map": "/karanzhenya.github.io/todolist/static/css/main.48934d97.chunk.css.map",
-    "static/js/2.f0d2b32b.chunk.js.LICENSE.txt": "/karanzhenya.github.io/todolist/static/js/2.f0d2b32b.chunk.js.LICENSE.txt"
+    "main.css": "/karanzhenya.github.io/todolistTS/static/css/main.48934d97.chunk.css",
+    "main.js": "/karanzhenya.github.io/todolistTS/static/js/main.9e852b49.chunk.js",
+    "main.js.map": "/karanzhenya.github.io/todolistTS/static/js/main.9e852b49.chunk.js.map",
+    "runtime-main.js": "/karanzhenya.github.io/todolistTS/static/js/runtime-main.b6967e7a.js",
+    "runtime-main.js.map": "/karanzhenya.github.io/todolistTS/static/js/runtime-main.b6967e7a.js.map",
+    "static/js/2.f0d2b32b.chunk.js": "/karanzhenya.github.io/todolistTS/static/js/2.f0d2b32b.chunk.js",
+    "static/js/2.f0d2b32b.chunk.js.map": "/karanzhenya.github.io/todolistTS/static/js/2.f0d2b32b.chunk.js.map",
+    "static/js/3.0ec34ece.chunk.js": "/karanzhenya.github.io/todolistTS/static/js/3.0ec34ece.chunk.js",
+    "static/js/3.0ec34ece.chunk.js.map": "/karanzhenya.github.io/todolistTS/static/js/3.0ec34ece.chunk.js.map",
+    "index.html": "/karanzhenya.github.io/todolistTS/index.html",
+    "static/css/main.48934d97.chunk.css.map": "/karanzhenya.github.io/todolistTS/static/css/main.48934d97.chunk.css.map",
+    "static/js/2.f0d2b32b.chunk.js.LICENSE.txt": "/karanzhenya.github.io/todolistTS/static/js/2.f0d2b32b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.57c482cf.js",
+    "static/js/runtime-main.b6967e7a.js",
     "static/js/2.f0d2b32b.chunk.js",
     "static/css/main.48934d97.chunk.css",
     "static/js/main.9e852b49.chunk.js"
