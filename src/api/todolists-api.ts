@@ -91,6 +91,7 @@ export enum TaskPriorities {
     Later = 4
 }
 
+console.log(TaskPriorities)
 export type TaskType = {
     description: string
     title: string

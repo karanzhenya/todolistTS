@@ -2,6 +2,7 @@ import {todolistsAPI, TodolistType} from '../../api/todolists-api'
 import {Dispatch} from 'redux'
 import {RequestStatusType, setAppStatusAC, SetAppStatusActionType} from '../../app/app-reducer'
 import {clearDataAC, fetchTasksTC} from "./tasks-reducer";
+import {AxiosResponse} from "axios";
 
 const initialState: Array<TodolistDomainType> = []
 
@@ -50,7 +51,7 @@ export const fetchTodolistsTC = () => {
     return (dispatch: any) => {
         dispatch(setAppStatusAC('loading'))
         todolistsAPI.getTodolists()
-            .then((res) => {
+            .then((res: AxiosResponse<TodolistType[]>) => {
                 dispatch(setTodolistsAC(res.data))
                 dispatch(setAppStatusAC('succeeded'))
                 return res.data
